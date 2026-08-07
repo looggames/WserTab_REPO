@@ -19,6 +19,6 @@
   "permissions": ["storage", "unlimitedStorage", "alarms", "notifications", "tabs", "webNavigation", "downloads", "system.display"],
   "host_permissions": [
     "https://suggestqueries.google.com/*",
-    "https://raw.githubusercontent.com/*"
+    "https://api.github.com/*"
   ]
 }
