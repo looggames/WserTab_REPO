@@ -1,0 +1,541 @@
+{
+  "ext_name": {
+    "message": "TimeSpot — Weltzeituhr-Neuer-Tab"
+  },
+  "ext_description": {
+    "message": "Eine Neuer-Tab-Seite mit Weltzeituhr, Google-Suche, Foto-Themes, Favoritenlinks, Notizen & Aufgaben und Erinnerungen."
+  },
+  "welcome_loading": {
+    "message": "Dein Tag wird geladen…"
+  },
+  "lock_enter_password": {
+    "message": "Passwort eingeben, um fortzufahren"
+  },
+  "lock_incorrect_password": {
+    "message": "Falsches Passwort. Versuch es erneut."
+  },
+  "lock_password_placeholder": {
+    "message": "Passwort"
+  },
+  "lock_show_password": {
+    "message": "Passwort anzeigen"
+  },
+  "lock_hide_password": {
+    "message": "Passwort verbergen"
+  },
+  "lock_unlock": {
+    "message": "Entsperren"
+  },
+  "search_placeholder": {
+    "message": "Google durchsuchen oder URL eingeben…"
+  },
+  "nav_notes_tasks": {
+    "message": "Notizen & Aufgaben"
+  },
+  "nav_timer_alerts": {
+    "message": "Timer & Erinnerungen"
+  },
+  "nav_customize": {
+    "message": "Anpassen"
+  },
+  "nav_rearrange": {
+    "message": "Bereiche neu anordnen"
+  },
+  "sign_in_google": {
+    "message": "Mit Google anmelden"
+  },
+  "drag_reorder": {
+    "message": "Zum Neuanordnen ziehen"
+  },
+  "current_label": {
+    "message": "Aktuell"
+  },
+  "favorites_title": {
+    "message": "Favoritenlinks"
+  },
+  "favorites_tagline": {
+    "message": "Deine Shortcuts, nur einen Klick entfernt."
+  },
+  "add_link_btn": {
+    "message": "Link hinzufügen"
+  },
+  "cities_tagline": {
+    "message": "Das Leben ist schnell. Bleib pünktlich\nund genieße jeden Moment!"
+  },
+  "add_another_city": {
+    "message": "Weitere Stadt hinzufügen"
+  },
+  "tab_tasks": {
+    "message": "Aufgaben"
+  },
+  "tab_notes": {
+    "message": "Notizen"
+  },
+  "tab_alerts": {
+    "message": "Erinnerungen"
+  },
+  "close_btn": {
+    "message": "Schließen"
+  },
+  "task_input_placeholder": {
+    "message": "Aufgabe hinzufügen…"
+  },
+  "manage_status_tags": {
+    "message": "Status-Tags verwalten"
+  },
+  "new_tag_placeholder": {
+    "message": "Name des neuen Tags…"
+  },
+  "new_note_btn": {
+    "message": "+ Neue Notiz"
+  },
+  "mode_at_time": {
+    "message": "Zu einer Uhrzeit"
+  },
+  "mode_countdown": {
+    "message": "Countdown"
+  },
+  "alert_label_placeholder": {
+    "message": "Bezeichnung (z. B. Aufstehen)"
+  },
+  "repeat_daily": {
+    "message": "Täglich wiederholen"
+  },
+  "set_alert_btn": {
+    "message": "Erinnerung setzen"
+  },
+  "preset_15min": {
+    "message": "15 Min."
+  },
+  "preset_25min": {
+    "message": "25 Min."
+  },
+  "preset_45min": {
+    "message": "45 Min."
+  },
+  "preset_1hour": {
+    "message": "1 Stunde"
+  },
+  "custom_minutes_placeholder": {
+    "message": "Eigene Minutenzahl"
+  },
+  "countdown_label_placeholder": {
+    "message": "Bezeichnung (z. B. Nudel-Timer)"
+  },
+  "start_countdown_btn": {
+    "message": "Countdown starten"
+  },
+  "alerts_hint": {
+    "message": "Erinnerungen nutzen Chrome-Benachrichtigungen und lösen auch aus, wenn dieser Tab geschlossen ist."
+  },
+  "add_city_title": {
+    "message": "Stadt hinzufügen"
+  },
+  "modal_search_placeholder": {
+    "message": "Stadtnamen eingeben (z. B. Tokio)"
+  },
+  "add_link_title": {
+    "message": "Favoritenlink hinzufügen"
+  },
+  "field_name": {
+    "message": "Name"
+  },
+  "field_url": {
+    "message": "URL"
+  },
+  "link_name_placeholder": {
+    "message": "z. B. Gmail"
+  },
+  "link_url_placeholder": {
+    "message": "z. B. https://mail.google.com"
+  },
+  "save_link_btn": {
+    "message": "Link speichern"
+  },
+  "pick_popular_site": {
+    "message": "Oder eine beliebte Seite wählen"
+  },
+  "filter_suggestions_placeholder": {
+    "message": "Vorschläge filtern…"
+  },
+  "customize_title": {
+    "message": "Anpassen"
+  },
+  "tab_theme": {
+    "message": "Theme"
+  },
+  "tab_display": {
+    "message": "Anzeige"
+  },
+  "tab_security": {
+    "message": "Sicherheit"
+  },
+  "theme_hint": {
+    "message": "Wähle einen Look — jedes Preset kombiniert eine Farbpalette mit einem passenden Hintergrundfoto. Standardmäßig folgt es der Hell-/Dunkel-Einstellung deines Systems; mit „Eigene“ gestaltest du dein eigenes."
+  },
+  "theme_light": {
+    "message": "Minimal hell"
+  },
+  "theme_dark": {
+    "message": "Dunkelmodus"
+  },
+  "theme_retro": {
+    "message": "Retro-Terminal"
+  },
+  "theme_ocean": {
+    "message": "Meeresbrise"
+  },
+  "theme_sunset": {
+    "message": "Sonnenuntergang"
+  },
+  "theme_forest": {
+    "message": "Wald"
+  },
+  "theme_nord": {
+    "message": "Nord"
+  },
+  "theme_solarized": {
+    "message": "Solarized"
+  },
+  "theme_rose": {
+    "message": "Rosé"
+  },
+  "theme_lavender": {
+    "message": "Lavendel"
+  },
+  "theme_coffee": {
+    "message": "Kaffee"
+  },
+  "theme_midnight": {
+    "message": "Mitternacht"
+  },
+  "theme_custom": {
+    "message": "Eigene"
+  },
+  "bg_photo_for": {
+    "message": "Hintergrundfoto für"
+  },
+  "bg_photo_this_theme": {
+    "message": "dieses Theme"
+  },
+  "bg_upload_hint": {
+    "message": "Wähle eines der eingebauten 2K-Fotos, lade eines von deinem Gerät hoch, würfle ein neues aus dem Internet oder füge einen Bildlink ein. Fahre über ein selbst hinzugefügtes Foto, um es zu entfernen."
+  },
+  "upload_from_device": {
+    "message": "📁 Vom Gerät hochladen"
+  },
+  "shuffle_from_internet": {
+    "message": "🔀 Aus dem Internet mischen"
+  },
+  "paste_image_url_placeholder": {
+    "message": "Oder Bild-URL einfügen…"
+  },
+  "use_btn": {
+    "message": "Verwenden"
+  },
+  "uploading_progress": {
+    "message": "Lade $1 von $2 hoch…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "skipped_images_one": {
+    "message": "1 Bild über 8 MB übersprungen."
+  },
+  "skipped_images_other": {
+    "message": "$1 Bilder über 8 MB übersprungen.",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "group_card_text": {
+    "message": "Karte & Text"
+  },
+  "group_city_tile": {
+    "message": "Hervorgehobene Stadtkachel"
+  },
+  "group_page_bg": {
+    "message": "Seitenhintergrund"
+  },
+  "group_accent": {
+    "message": "Akzentfarben"
+  },
+  "label_card_color": {
+    "message": "Karten-/Oberflächenfarbe"
+  },
+  "label_text_color": {
+    "message": "Textfarbe"
+  },
+  "label_muted_color": {
+    "message": "Gedämpfter / sekundärer Text"
+  },
+  "label_button_text_color": {
+    "message": "Button-Textfarbe"
+  },
+  "label_bg": {
+    "message": "Hintergrund"
+  },
+  "label_bg_color": {
+    "message": "Hintergrundfarbe"
+  },
+  "label_accent1": {
+    "message": "Akzent (Notizen, Icons, Hervorhebungen)"
+  },
+  "label_accent2": {
+    "message": "Akzent 2 (Erinnerungen, Verläufe)"
+  },
+  "custom_theme_footer_hint": {
+    "message": "Nutze den Bereich <b>Hintergrundfoto</b> oben, um ein Bild auszuwählen — es gilt unabhängig davon, welche Palette du hier wählst."
+  },
+  "display_bleed_hint": {
+    "message": "Die Karte bleibt immer mit ihrem normalen Abstand zentriert. Aktiviere dies, um deinen Hintergrund randlos über das ganze Fenster zu strecken und die Karte damit verschmelzen zu lassen — keine Kartenfarbe, nur dein Inhalt über dem Hintergrund."
+  },
+  "display_full_bleed": {
+    "message": "Randloser Hintergrund über volle Breite/Höhe"
+  },
+  "display_shadow_hint": {
+    "message": "Schatten der Karte ein- oder ausschalten. Unabhängig von der Randlos-Einstellung oben."
+  },
+  "display_card_shadow": {
+    "message": "Kartenschatten"
+  },
+  "display_overlay_hint": {
+    "message": "Ein dezenter dunkler Schleier über deinem Hintergrundfoto, damit Text auf unruhigen Bildern lesbar bleibt. Schalte ihn aus für die echten Fotofarben, oder regle seine Stärke."
+  },
+  "display_overlay": {
+    "message": "Hintergrund-Overlay"
+  },
+  "security_hint": {
+    "message": "Fragt beim ersten Öffnen deines Browsers pro Sitzung auf diesem Gerät nach einem Passwort. Das ist ein leichter Sichtschutz für gemeinsam genutzte Computer — keine echte Sicherheit. Jeder mit Zugriff auf den Erweiterungsspeicher dieses Browsers kann es umgehen, und ein vergessenes Passwort lässt sich nur durch Zurücksetzen der Erweiterungsdaten löschen."
+  },
+  "security_require_password": {
+    "message": "Passwort bei jeder Sitzung verlangen"
+  },
+  "new_password_placeholder": {
+    "message": "Neues Passwort"
+  },
+  "confirm_password_placeholder": {
+    "message": "Passwort bestätigen"
+  },
+  "save_password_btn": {
+    "message": "Passwort speichern"
+  },
+  "change_password_btn": {
+    "message": "Passwort ändern"
+  },
+  "remove_password_btn": {
+    "message": "Passwort entfernen"
+  },
+  "use_at_least_4_chars": {
+    "message": "Verwende mindestens 4 Zeichen."
+  },
+  "passwords_dont_match": {
+    "message": "Die Passwörter stimmen nicht überein."
+  },
+  "confirm_remove_password": {
+    "message": "Passwort entfernen? Du musst ein neues festlegen, um es wieder zu aktivieren."
+  },
+  "fired_alert_default_title": {
+    "message": "Erinnerung"
+  },
+  "fired_alert_default_msg": {
+    "message": "Die Zeit ist um!"
+  },
+  "alert_time_message": {
+    "message": "Es ist $1 Uhr",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "snooze_5min": {
+    "message": "5 Min. später"
+  },
+  "dismiss_btn": {
+    "message": "Verwerfen"
+  },
+  "fired_more_waiting": {
+    "message": "$1 weitere warten…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "remove_title": {
+    "message": "Entfernen"
+  },
+  "day_label": {
+    "message": "☀️ Tag"
+  },
+  "night_label": {
+    "message": "🌙 Nacht"
+  },
+  "sun_line": {
+    "message": "Sonne $1 : $2 – $3 ($4)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": "$3"
+      },
+      "4": {
+        "content": "$4"
+      }
+    }
+  },
+  "sun_up_all_day": {
+    "message": "Sonne ☀️ : den ganzen Tag oben"
+  },
+  "sun_down_all_day": {
+    "message": "Sonne 🌙 : den ganzen Tag unten"
+  },
+  "no_cities_found": {
+    "message": "Keine Städte gefunden"
+  },
+  "added_label": {
+    "message": "Hinzugefügt"
+  },
+  "already_added": {
+    "message": "$1 — bereits hinzugefügt",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "add_x": {
+    "message": "$1 hinzufügen",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "link_empty": {
+    "message": "Noch keine Favoritenlinks — klicke auf „Link hinzufügen“, um deinen ersten Shortcut zu speichern."
+  },
+  "greeting_welcome_back": {
+    "message": "Willkommen zurück"
+  },
+  "greeting_good_morning": {
+    "message": "Guten Morgen"
+  },
+  "greeting_good_afternoon": {
+    "message": "Guten Tag"
+  },
+  "greeting_good_evening": {
+    "message": "Guten Abend"
+  },
+  "filter_all": {
+    "message": "Alle"
+  },
+  "no_tasks_with_tag": {
+    "message": "Keine Aufgaben mit diesem Tag."
+  },
+  "no_tasks_yet": {
+    "message": "Noch keine Aufgaben."
+  },
+  "delete_tag_title": {
+    "message": "Tag löschen"
+  },
+  "just_now": {
+    "message": "gerade eben"
+  },
+  "default_tag_todo": {
+    "message": "Zu erledigen"
+  },
+  "default_tag_inprogress": {
+    "message": "In Bearbeitung"
+  },
+  "default_tag_inreview": {
+    "message": "In Prüfung"
+  },
+  "default_tag_done": {
+    "message": "Erledigt"
+  },
+  "notes_empty": {
+    "message": "Noch keine Notizen — klicke auf „Neue Notiz“, um eine hinzuzufügen."
+  },
+  "note_expand": {
+    "message": "Erweitern"
+  },
+  "note_collapse": {
+    "message": "Einklappen"
+  },
+  "note_title_placeholder": {
+    "message": "Notiztitel"
+  },
+  "delete_note_title": {
+    "message": "Notiz löschen"
+  },
+  "no_content": {
+    "message": "Kein Inhalt"
+  },
+  "write_here_placeholder": {
+    "message": "Hier schreiben…"
+  },
+  "note_updated": {
+    "message": "Aktualisiert $1 $2",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "alert_empty": {
+    "message": "Keine Erinnerungen eingerichtet."
+  },
+  "sign_out": {
+    "message": "Abmelden"
+  },
+  "badge_timer": {
+    "message": "Timer"
+  },
+  "badge_alarm": {
+    "message": "Alarm"
+  },
+  "daily_suffix": {
+    "message": " · täglich"
+  },
+  "profile_signed_in_fallback": {
+    "message": "Angemeldet"
+  },
+  "profile_load_error": {
+    "message": "Angemeldet, aber die Profilinformationen konnten nicht geladen werden."
+  },
+  "default_note_title": {
+    "message": "Notiz 1"
+  },
+    "sign_in_google": { "message": "Mit Google anmelden" },
+  "accounts_button": { "message": "Ihre gespeicherten Link-Konten" },
+  "accounts_title": { "message": "Verknüpfte Konten" },
+  "add_account_btn": { "message": "+ Link hinzufügen" },
+  "account_email_placeholder": { "message": "name@example.com" },
+  "account_title_placeholder": { "message": "Titel (z. B. Arbeit)" },
+  "field_title_optional": { "message": "optional" },
+  "save_account_btn": { "message": "Konto speichern" },
+  "acct_url_required_msg": { "message": "Geben Sie eine Link-URL ein." },
+  "no_accounts_yet": { "message": "Noch keine Links gespeichert – fügen Sie einen für den Schnellzugriff hinzu." },
+  "field_email": { "message": "E-Mail" },
+  "field_title": { "message": "Titel" },
+  "invalid_email_msg": { "message": "Geben Sie eine gültige E-Mail-Adresse ein." },
+  "account_links_empty": { "message": "Hier sind noch keine Links gespeichert." },
+  "add_account_link_btn": { "message": "+ Link hinzufügen" },
+  "remove_account_btn": { "message": "Konto entfernen" }
+}

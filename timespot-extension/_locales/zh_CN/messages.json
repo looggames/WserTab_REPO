@@ -1,0 +1,541 @@
+{
+  "ext_name": {
+    "message": "TimeSpot — 世界时钟新标签页"
+  },
+  "ext_description": {
+    "message": "带有世界时钟、谷歌搜索、图片主题、收藏链接、笔记与任务、以及定时提醒的新标签页。"
+  },
+  "welcome_loading": {
+    "message": "正在加载你的一天…"
+  },
+  "lock_enter_password": {
+    "message": "请输入密码以继续"
+  },
+  "lock_incorrect_password": {
+    "message": "密码错误，请重试。"
+  },
+  "lock_password_placeholder": {
+    "message": "密码"
+  },
+  "lock_show_password": {
+    "message": "显示密码"
+  },
+  "lock_hide_password": {
+    "message": "隐藏密码"
+  },
+  "lock_unlock": {
+    "message": "解锁"
+  },
+  "search_placeholder": {
+    "message": "使用谷歌搜索或输入网址…"
+  },
+  "nav_notes_tasks": {
+    "message": "笔记与任务"
+  },
+  "nav_timer_alerts": {
+    "message": "计时器与提醒"
+  },
+  "nav_customize": {
+    "message": "自定义"
+  },
+  "nav_rearrange": {
+    "message": "重新排列版块"
+  },
+  "sign_in_google": {
+    "message": "使用谷歌账号登录"
+  },
+  "drag_reorder": {
+    "message": "拖动以重新排序"
+  },
+  "current_label": {
+    "message": "当前"
+  },
+  "favorites_title": {
+    "message": "收藏链接"
+  },
+  "favorites_tagline": {
+    "message": "你的快捷方式，一键直达。"
+  },
+  "add_link_btn": {
+    "message": "添加链接"
+  },
+  "cities_tagline": {
+    "message": "时光飞逝，把握当下\n享受每一刻！"
+  },
+  "add_another_city": {
+    "message": "添加另一个城市"
+  },
+  "tab_tasks": {
+    "message": "任务"
+  },
+  "tab_notes": {
+    "message": "笔记"
+  },
+  "tab_alerts": {
+    "message": "提醒"
+  },
+  "close_btn": {
+    "message": "关闭"
+  },
+  "task_input_placeholder": {
+    "message": "添加任务…"
+  },
+  "manage_status_tags": {
+    "message": "管理状态标签"
+  },
+  "new_tag_placeholder": {
+    "message": "新标签名称…"
+  },
+  "new_note_btn": {
+    "message": "+ 新建笔记"
+  },
+  "mode_at_time": {
+    "message": "定时"
+  },
+  "mode_countdown": {
+    "message": "倒计时"
+  },
+  "alert_label_placeholder": {
+    "message": "标签（例如：起身活动）"
+  },
+  "repeat_daily": {
+    "message": "每天重复"
+  },
+  "set_alert_btn": {
+    "message": "设置提醒"
+  },
+  "preset_15min": {
+    "message": "15 分钟"
+  },
+  "preset_25min": {
+    "message": "25 分钟"
+  },
+  "preset_45min": {
+    "message": "45 分钟"
+  },
+  "preset_1hour": {
+    "message": "1 小时"
+  },
+  "custom_minutes_placeholder": {
+    "message": "自定义分钟数"
+  },
+  "countdown_label_placeholder": {
+    "message": "标签（例如：煮面计时）"
+  },
+  "start_countdown_btn": {
+    "message": "开始倒计时"
+  },
+  "alerts_hint": {
+    "message": "提醒使用 Chrome 通知，即使该标签页已关闭也会触发。"
+  },
+  "add_city_title": {
+    "message": "添加城市"
+  },
+  "modal_search_placeholder": {
+    "message": "输入城市名称（例如：东京）"
+  },
+  "add_link_title": {
+    "message": "添加收藏链接"
+  },
+  "field_name": {
+    "message": "名称"
+  },
+  "field_url": {
+    "message": "网址"
+  },
+  "link_name_placeholder": {
+    "message": "例如：Gmail"
+  },
+  "link_url_placeholder": {
+    "message": "例如：https://mail.google.com"
+  },
+  "save_link_btn": {
+    "message": "保存链接"
+  },
+  "pick_popular_site": {
+    "message": "或选择一个热门网站"
+  },
+  "filter_suggestions_placeholder": {
+    "message": "筛选建议…"
+  },
+  "customize_title": {
+    "message": "自定义"
+  },
+  "tab_theme": {
+    "message": "主题"
+  },
+  "tab_display": {
+    "message": "显示"
+  },
+  "tab_security": {
+    "message": "安全"
+  },
+  "theme_hint": {
+    "message": "选择一种风格——每个预设都将配色方案与相应的背景图片搭配。默认跟随系统的浅色/深色偏好；使用「自定义」打造你自己的风格。"
+  },
+  "theme_light": {
+    "message": "简约浅色"
+  },
+  "theme_dark": {
+    "message": "深色模式"
+  },
+  "theme_retro": {
+    "message": "复古终端"
+  },
+  "theme_ocean": {
+    "message": "海洋微风"
+  },
+  "theme_sunset": {
+    "message": "日落"
+  },
+  "theme_forest": {
+    "message": "森林"
+  },
+  "theme_nord": {
+    "message": "Nord"
+  },
+  "theme_solarized": {
+    "message": "Solarized"
+  },
+  "theme_rose": {
+    "message": "玫瑰"
+  },
+  "theme_lavender": {
+    "message": "薰衣草"
+  },
+  "theme_coffee": {
+    "message": "咖啡"
+  },
+  "theme_midnight": {
+    "message": "午夜"
+  },
+  "theme_custom": {
+    "message": "自定义"
+  },
+  "bg_photo_for": {
+    "message": "背景图片："
+  },
+  "bg_photo_this_theme": {
+    "message": "当前主题"
+  },
+  "bg_upload_hint": {
+    "message": "选择内置的 2K 图片之一，从设备上传自己的图片，从网络随机换一张，或粘贴图片链接。将鼠标悬停在你自己添加的图片上可将其移除。"
+  },
+  "upload_from_device": {
+    "message": "📁 从设备上传"
+  },
+  "shuffle_from_internet": {
+    "message": "🔀 从网络随机获取"
+  },
+  "paste_image_url_placeholder": {
+    "message": "或粘贴图片网址…"
+  },
+  "use_btn": {
+    "message": "使用"
+  },
+  "uploading_progress": {
+    "message": "正在上传第 $1 张，共 $2 张…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "skipped_images_one": {
+    "message": "已跳过 1 张超过 8MB 的图片。"
+  },
+  "skipped_images_other": {
+    "message": "已跳过 $1 张超过 8MB 的图片。",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "group_card_text": {
+    "message": "卡片与文字"
+  },
+  "group_city_tile": {
+    "message": "高亮城市卡片"
+  },
+  "group_page_bg": {
+    "message": "页面背景"
+  },
+  "group_accent": {
+    "message": "强调色"
+  },
+  "label_card_color": {
+    "message": "卡片/表面颜色"
+  },
+  "label_text_color": {
+    "message": "文字颜色"
+  },
+  "label_muted_color": {
+    "message": "次要/浅色文字"
+  },
+  "label_button_text_color": {
+    "message": "按钮文字颜色"
+  },
+  "label_bg": {
+    "message": "背景"
+  },
+  "label_bg_color": {
+    "message": "背景颜色"
+  },
+  "label_accent1": {
+    "message": "强调色（笔记、图标、高亮）"
+  },
+  "label_accent2": {
+    "message": "强调色 2（提醒、渐变）"
+  },
+  "custom_theme_footer_hint": {
+    "message": "使用上方的<b>背景图片</b>部分选择图片——无论你在此选择哪种配色方案，它都会生效。"
+  },
+  "display_bleed_hint": {
+    "message": "卡片始终以正常间距居中显示。开启此项可将背景铺满整个窗口边到边，让卡片融入背景——没有卡片颜色，只有悬浮在背景之上的内容。"
+  },
+  "display_full_bleed": {
+    "message": "全宽全高背景"
+  },
+  "display_shadow_hint": {
+    "message": "开启或关闭卡片投影，与上方的全屏设置相互独立。"
+  },
+  "display_card_shadow": {
+    "message": "卡片阴影"
+  },
+  "display_overlay_hint": {
+    "message": "在背景图片上叠加一层淡淡的暗色，让文字在繁复图片上依然清晰可读。关闭可显示图片原色，或调节其强度。"
+  },
+  "display_overlay": {
+    "message": "背景叠加层"
+  },
+  "security_hint": {
+    "message": "在此设备上每次会话首次打开浏览器时要求输入密码。这只是共享电脑上的轻量隐私屏障，并非真正的安全措施。任何能访问此浏览器扩展存储的人都可以绕过它，忘记的密码只能通过重置扩展数据来清除。"
+  },
+  "security_require_password": {
+    "message": "每次会话都要求密码"
+  },
+  "new_password_placeholder": {
+    "message": "新密码"
+  },
+  "confirm_password_placeholder": {
+    "message": "确认密码"
+  },
+  "save_password_btn": {
+    "message": "保存密码"
+  },
+  "change_password_btn": {
+    "message": "更改密码"
+  },
+  "remove_password_btn": {
+    "message": "移除密码"
+  },
+  "use_at_least_4_chars": {
+    "message": "请至少使用 4 个字符。"
+  },
+  "passwords_dont_match": {
+    "message": "两次输入的密码不一致。"
+  },
+  "confirm_remove_password": {
+    "message": "要移除密码吗？重新启用时需要设置一个新密码。"
+  },
+  "fired_alert_default_title": {
+    "message": "提醒"
+  },
+  "fired_alert_default_msg": {
+    "message": "时间到！"
+  },
+  "alert_time_message": {
+    "message": "现在是 $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "snooze_5min": {
+    "message": "稍后提醒（5 分钟）"
+  },
+  "dismiss_btn": {
+    "message": "忽略"
+  },
+  "fired_more_waiting": {
+    "message": "还有 $1 个等待中…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "remove_title": {
+    "message": "移除"
+  },
+  "day_label": {
+    "message": "☀️ 白天"
+  },
+  "night_label": {
+    "message": "🌙 夜晚"
+  },
+  "sun_line": {
+    "message": "日出日落 $1：$2 – $3（$4）",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": "$3"
+      },
+      "4": {
+        "content": "$4"
+      }
+    }
+  },
+  "sun_up_all_day": {
+    "message": "☀️：全天日照"
+  },
+  "sun_down_all_day": {
+    "message": "🌙：全天无日照"
+  },
+  "no_cities_found": {
+    "message": "未找到城市"
+  },
+  "added_label": {
+    "message": "已添加"
+  },
+  "already_added": {
+    "message": "$1 — 已添加",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "add_x": {
+    "message": "添加 $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "link_empty": {
+    "message": "还没有收藏链接 — 点击「添加链接」保存你的第一个快捷方式。"
+  },
+  "greeting_welcome_back": {
+    "message": "欢迎回来"
+  },
+  "greeting_good_morning": {
+    "message": "早上好"
+  },
+  "greeting_good_afternoon": {
+    "message": "下午好"
+  },
+  "greeting_good_evening": {
+    "message": "晚上好"
+  },
+  "filter_all": {
+    "message": "全部"
+  },
+  "no_tasks_with_tag": {
+    "message": "没有该标签下的任务。"
+  },
+  "no_tasks_yet": {
+    "message": "还没有任务。"
+  },
+  "delete_tag_title": {
+    "message": "删除标签"
+  },
+  "just_now": {
+    "message": "刚刚"
+  },
+  "default_tag_todo": {
+    "message": "待办"
+  },
+  "default_tag_inprogress": {
+    "message": "进行中"
+  },
+  "default_tag_inreview": {
+    "message": "审核中"
+  },
+  "default_tag_done": {
+    "message": "已完成"
+  },
+  "notes_empty": {
+    "message": "还没有笔记 — 点击「新建笔记」添加一条。"
+  },
+  "note_expand": {
+    "message": "展开"
+  },
+  "note_collapse": {
+    "message": "收起"
+  },
+  "note_title_placeholder": {
+    "message": "笔记标题"
+  },
+  "delete_note_title": {
+    "message": "删除笔记"
+  },
+  "no_content": {
+    "message": "无内容"
+  },
+  "write_here_placeholder": {
+    "message": "在此输入…"
+  },
+  "note_updated": {
+    "message": "更新于 $1 $2",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "alert_empty": {
+    "message": "暂无设置的提醒。"
+  },
+  "sign_out": {
+    "message": "退出登录"
+  },
+  "badge_timer": {
+    "message": "计时器"
+  },
+  "badge_alarm": {
+    "message": "闹钟"
+  },
+  "daily_suffix": {
+    "message": " · 每天"
+  },
+  "profile_signed_in_fallback": {
+    "message": "已登录"
+  },
+  "profile_load_error": {
+    "message": "已登录，但无法加载你的个人资料信息。"
+  },
+  "default_note_title": {
+    "message": "笔记 1"
+  },
+    "sign_in_google": { "message": "使用 Google 登录" },
+  "accounts_button": { "message": "已保存的链接账户" },
+  "accounts_title": { "message": "关联账户" },
+  "add_account_btn": { "message": "+ 添加链接" },
+  "account_email_placeholder": { "message": "name@example.com" },
+  "account_title_placeholder": { "message": "标题（例如：工作）" },
+  "field_title_optional": { "message": "可选" },
+  "save_account_btn": { "message": "保存账户" },
+  "acct_url_required_msg": { "message": "请输入链接 URL。" },
+  "no_accounts_yet": { "message": "还没有保存任何链接——添加一个即可快速访问。" },
+  "field_email": { "message": "电子邮箱" },
+  "field_title": { "message": "标题" },
+  "invalid_email_msg": { "message": "请输入有效的电子邮箱地址。" },
+  "account_links_empty": { "message": "这里还没有保存任何链接。" },
+  "add_account_link_btn": { "message": "+ 添加链接" },
+  "remove_account_btn": { "message": "删除账户" }
+}

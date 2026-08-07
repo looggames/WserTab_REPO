@@ -1,0 +1,541 @@
+{
+  "ext_name": {
+    "message": "TimeSpot — ساعة عالمية لعلامة التبويب الجديدة"
+  },
+  "ext_description": {
+    "message": "صفحة علامة تبويب جديدة تضم ساعة عالمية، بحث Google، خلفيات مصوّرة، روابط مفضّلة، ملاحظات ومهام، وتنبيهات مؤقتة."
+  },
+  "welcome_loading": {
+    "message": "جارٍ تحميل يومك…"
+  },
+  "lock_enter_password": {
+    "message": "أدخل كلمة المرور للمتابعة"
+  },
+  "lock_incorrect_password": {
+    "message": "كلمة مرور غير صحيحة. حاول مرة أخرى."
+  },
+  "lock_password_placeholder": {
+    "message": "كلمة المرور"
+  },
+  "lock_show_password": {
+    "message": "إظهار كلمة المرور"
+  },
+  "lock_hide_password": {
+    "message": "إخفاء كلمة المرور"
+  },
+  "lock_unlock": {
+    "message": "فتح القفل"
+  },
+  "search_placeholder": {
+    "message": "ابحث في Google أو اكتب عنوان URL…"
+  },
+  "nav_notes_tasks": {
+    "message": "الملاحظات والمهام"
+  },
+  "nav_timer_alerts": {
+    "message": "المؤقت والتنبيهات"
+  },
+  "nav_customize": {
+    "message": "تخصيص"
+  },
+  "nav_rearrange": {
+    "message": "إعادة ترتيب الأقسام"
+  },
+  "sign_in_google": {
+    "message": "تسجيل الدخول باستخدام Google"
+  },
+  "drag_reorder": {
+    "message": "اسحب لإعادة الترتيب"
+  },
+  "current_label": {
+    "message": "الحالي"
+  },
+  "favorites_title": {
+    "message": "الروابط المفضّلة"
+  },
+  "favorites_tagline": {
+    "message": "اختصاراتك، على بُعد نقرة واحدة."
+  },
+  "add_link_btn": {
+    "message": "إضافة رابط"
+  },
+  "cities_tagline": {
+    "message": "الحياة سريعة الإيقاع. حافظ على مواعيدك\nواستمتع بكل لحظة!"
+  },
+  "add_another_city": {
+    "message": "إضافة مدينة أخرى"
+  },
+  "tab_tasks": {
+    "message": "المهام"
+  },
+  "tab_notes": {
+    "message": "الملاحظات"
+  },
+  "tab_alerts": {
+    "message": "التنبيهات"
+  },
+  "close_btn": {
+    "message": "إغلاق"
+  },
+  "task_input_placeholder": {
+    "message": "إضافة مهمة…"
+  },
+  "manage_status_tags": {
+    "message": "إدارة وسوم الحالة"
+  },
+  "new_tag_placeholder": {
+    "message": "اسم الوسم الجديد…"
+  },
+  "new_note_btn": {
+    "message": "+ ملاحظة جديدة"
+  },
+  "mode_at_time": {
+    "message": "في وقت محدد"
+  },
+  "mode_countdown": {
+    "message": "عدّ تنازلي"
+  },
+  "alert_label_placeholder": {
+    "message": "التسمية (مثل: الوقوف والتمدد)"
+  },
+  "repeat_daily": {
+    "message": "التكرار يوميًا"
+  },
+  "set_alert_btn": {
+    "message": "ضبط التنبيه"
+  },
+  "preset_15min": {
+    "message": "15 دقيقة"
+  },
+  "preset_25min": {
+    "message": "25 دقيقة"
+  },
+  "preset_45min": {
+    "message": "45 دقيقة"
+  },
+  "preset_1hour": {
+    "message": "ساعة واحدة"
+  },
+  "custom_minutes_placeholder": {
+    "message": "عدد دقائق مخصص"
+  },
+  "countdown_label_placeholder": {
+    "message": "التسمية (مثل: مؤقت المعكرونة)"
+  },
+  "start_countdown_btn": {
+    "message": "بدء العدّ التنازلي"
+  },
+  "alerts_hint": {
+    "message": "تستخدم التنبيهات إشعارات Chrome وتعمل حتى لو كانت علامة التبويب هذه مغلقة."
+  },
+  "add_city_title": {
+    "message": "إضافة مدينة"
+  },
+  "modal_search_placeholder": {
+    "message": "اكتب اسم مدينة (مثل: طوكيو)"
+  },
+  "add_link_title": {
+    "message": "إضافة رابط مفضّل"
+  },
+  "field_name": {
+    "message": "الاسم"
+  },
+  "field_url": {
+    "message": "الرابط"
+  },
+  "link_name_placeholder": {
+    "message": "مثل: Gmail"
+  },
+  "link_url_placeholder": {
+    "message": "مثل: https://mail.google.com"
+  },
+  "save_link_btn": {
+    "message": "حفظ الرابط"
+  },
+  "pick_popular_site": {
+    "message": "أو اختر موقعًا شائعًا"
+  },
+  "filter_suggestions_placeholder": {
+    "message": "تصفية الاقتراحات…"
+  },
+  "customize_title": {
+    "message": "تخصيص"
+  },
+  "tab_theme": {
+    "message": "المظهر"
+  },
+  "tab_display": {
+    "message": "العرض"
+  },
+  "tab_security": {
+    "message": "الأمان"
+  },
+  "theme_hint": {
+    "message": "اختر مظهرًا — كل إعداد مسبق يجمع بين لوحة ألوان وصورة خلفية مطابقة. يتبع افتراضيًا تفضيل النظام للوضع الفاتح/الداكن؛ أنشئ مظهرك الخاص باستخدام «مخصص»."
+  },
+  "theme_light": {
+    "message": "فاتح بسيط"
+  },
+  "theme_dark": {
+    "message": "الوضع الداكن"
+  },
+  "theme_retro": {
+    "message": "طرفية كلاسيكية"
+  },
+  "theme_ocean": {
+    "message": "نسيم المحيط"
+  },
+  "theme_sunset": {
+    "message": "الغروب"
+  },
+  "theme_forest": {
+    "message": "الغابة"
+  },
+  "theme_nord": {
+    "message": "Nord"
+  },
+  "theme_solarized": {
+    "message": "Solarized"
+  },
+  "theme_rose": {
+    "message": "وردي"
+  },
+  "theme_lavender": {
+    "message": "لافندر"
+  },
+  "theme_coffee": {
+    "message": "قهوة"
+  },
+  "theme_midnight": {
+    "message": "منتصف الليل"
+  },
+  "theme_custom": {
+    "message": "مخصص"
+  },
+  "bg_photo_for": {
+    "message": "صورة الخلفية لـ"
+  },
+  "bg_photo_this_theme": {
+    "message": "هذا المظهر"
+  },
+  "bg_upload_hint": {
+    "message": "اختر إحدى الصور المدمجة بدقة 2K، أو ارفع صورتك من جهازك، أو اسحب صورة جديدة عشوائية من الإنترنت، أو الصق رابط صورة. مرّر المؤشر فوق صورة أضفتها بنفسك لإزالتها."
+  },
+  "upload_from_device": {
+    "message": "📁 الرفع من الجهاز"
+  },
+  "shuffle_from_internet": {
+    "message": "🔀 اختيار عشوائي من الإنترنت"
+  },
+  "paste_image_url_placeholder": {
+    "message": "أو الصق رابط صورة…"
+  },
+  "use_btn": {
+    "message": "استخدام"
+  },
+  "uploading_progress": {
+    "message": "جارٍ رفع $1 من $2…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "skipped_images_one": {
+    "message": "تم تخطي صورة واحدة أكبر من 8 ميغابايت."
+  },
+  "skipped_images_other": {
+    "message": "تم تخطي $1 صور أكبر من 8 ميغابايت.",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "group_card_text": {
+    "message": "البطاقة والنص"
+  },
+  "group_city_tile": {
+    "message": "بطاقة المدينة المميزة"
+  },
+  "group_page_bg": {
+    "message": "خلفية الصفحة"
+  },
+  "group_accent": {
+    "message": "ألوان التمييز"
+  },
+  "label_card_color": {
+    "message": "لون البطاقة / السطح"
+  },
+  "label_text_color": {
+    "message": "لون النص"
+  },
+  "label_muted_color": {
+    "message": "نص ثانوي / خافت"
+  },
+  "label_button_text_color": {
+    "message": "لون نص الأزرار"
+  },
+  "label_bg": {
+    "message": "الخلفية"
+  },
+  "label_bg_color": {
+    "message": "لون الخلفية"
+  },
+  "label_accent1": {
+    "message": "لون التمييز (الملاحظات، الأيقونات، الإبراز)"
+  },
+  "label_accent2": {
+    "message": "لون التمييز 2 (التنبيهات، التدرجات)"
+  },
+  "custom_theme_footer_hint": {
+    "message": "استخدم قسم <b>صورة الخلفية</b> أعلاه لاختيار صورة — يتم تطبيقها بغض النظر عن لوحة الألوان التي تختارها هنا."
+  },
+  "display_bleed_hint": {
+    "message": "تبقى البطاقة دائمًا في المنتصف بمسافاتها الطبيعية. فعّل هذا الخيار لتمديد خلفيتك حتى حواف النافذة بالكامل ودمج البطاقة معها — بلا لون للبطاقة، فقط محتواك عائمًا فوق الخلفية."
+  },
+  "display_full_bleed": {
+    "message": "خلفية بكامل العرض والارتفاع"
+  },
+  "display_shadow_hint": {
+    "message": "تشغيل أو إيقاف ظل البطاقة. هذا الإعداد مستقل عن إعداد الامتداد الكامل أعلاه."
+  },
+  "display_card_shadow": {
+    "message": "ظل البطاقة"
+  },
+  "display_overlay_hint": {
+    "message": "تظليل داكن خفيف فوق صورة الخلفية، بحيث يبقى النص واضحًا فوق الصور المزدحمة. أطفئه لرؤية ألوان الصورة الحقيقية، أو اضبط شدته."
+  },
+  "display_overlay": {
+    "message": "تراكب الخلفية"
+  },
+  "security_hint": {
+    "message": "يطلب كلمة مرور عند أول فتح للمتصفح في كل جلسة، على هذا الجهاز. هذه شاشة خصوصية بسيطة للأجهزة المشتركة — وليست أمانًا حقيقيًا. يمكن لأي شخص لديه وصول إلى تخزين هذه الإضافة تجاوزها، ولا يمكن مسح كلمة مرور منسية إلا بإعادة تعيين بيانات الإضافة."
+  },
+  "security_require_password": {
+    "message": "طلب كلمة مرور في كل جلسة"
+  },
+  "new_password_placeholder": {
+    "message": "كلمة مرور جديدة"
+  },
+  "confirm_password_placeholder": {
+    "message": "تأكيد كلمة المرور"
+  },
+  "save_password_btn": {
+    "message": "حفظ كلمة المرور"
+  },
+  "change_password_btn": {
+    "message": "تغيير كلمة المرور"
+  },
+  "remove_password_btn": {
+    "message": "إزالة كلمة المرور"
+  },
+  "use_at_least_4_chars": {
+    "message": "استخدم 4 أحرف على الأقل."
+  },
+  "passwords_dont_match": {
+    "message": "كلمتا المرور غير متطابقتين."
+  },
+  "confirm_remove_password": {
+    "message": "هل تريد إزالة كلمة المرور؟ ستحتاج لتعيين كلمة مرور جديدة لإعادة تفعيلها."
+  },
+  "fired_alert_default_title": {
+    "message": "تنبيه"
+  },
+  "fired_alert_default_msg": {
+    "message": "انتهى الوقت!"
+  },
+  "alert_time_message": {
+    "message": "الوقت الآن $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "snooze_5min": {
+    "message": "غفوة 5 دقائق"
+  },
+  "dismiss_btn": {
+    "message": "تجاهل"
+  },
+  "fired_more_waiting": {
+    "message": "$1 أخرى في الانتظار…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "remove_title": {
+    "message": "إزالة"
+  },
+  "day_label": {
+    "message": "☀️ نهار"
+  },
+  "night_label": {
+    "message": "🌙 ليل"
+  },
+  "sun_line": {
+    "message": "الشمس $1 : $2 – $3 ($4)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": "$3"
+      },
+      "4": {
+        "content": "$4"
+      }
+    }
+  },
+  "sun_up_all_day": {
+    "message": "الشمس ☀️ : طوال اليوم"
+  },
+  "sun_down_all_day": {
+    "message": "الشمس 🌙 : غاربة طوال اليوم"
+  },
+  "no_cities_found": {
+    "message": "لم يتم العثور على مدن"
+  },
+  "added_label": {
+    "message": "تمت الإضافة"
+  },
+  "already_added": {
+    "message": "$1 — تمت إضافته مسبقًا",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "add_x": {
+    "message": "إضافة $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "link_empty": {
+    "message": "لا توجد روابط مفضّلة بعد — انقر على «إضافة رابط» لحفظ أول اختصار لك."
+  },
+  "greeting_welcome_back": {
+    "message": "مرحبًا بعودتك"
+  },
+  "greeting_good_morning": {
+    "message": "صباح الخير"
+  },
+  "greeting_good_afternoon": {
+    "message": "مساء الخير"
+  },
+  "greeting_good_evening": {
+    "message": "مساء الخير"
+  },
+  "filter_all": {
+    "message": "الكل"
+  },
+  "no_tasks_with_tag": {
+    "message": "لا توجد مهام بهذا الوسم."
+  },
+  "no_tasks_yet": {
+    "message": "لا توجد مهام بعد."
+  },
+  "delete_tag_title": {
+    "message": "حذف الوسم"
+  },
+  "just_now": {
+    "message": "الآن"
+  },
+  "default_tag_todo": {
+    "message": "للقيام بها"
+  },
+  "default_tag_inprogress": {
+    "message": "قيد التنفيذ"
+  },
+  "default_tag_inreview": {
+    "message": "قيد المراجعة"
+  },
+  "default_tag_done": {
+    "message": "مكتملة"
+  },
+  "notes_empty": {
+    "message": "لا توجد ملاحظات بعد — انقر على «ملاحظة جديدة» لإضافة واحدة."
+  },
+  "note_expand": {
+    "message": "توسيع"
+  },
+  "note_collapse": {
+    "message": "طيّ"
+  },
+  "note_title_placeholder": {
+    "message": "عنوان الملاحظة"
+  },
+  "delete_note_title": {
+    "message": "حذف الملاحظة"
+  },
+  "no_content": {
+    "message": "لا يوجد محتوى"
+  },
+  "write_here_placeholder": {
+    "message": "اكتب هنا…"
+  },
+  "note_updated": {
+    "message": "آخر تحديث $1 $2",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "alert_empty": {
+    "message": "لا توجد تنبيهات مضبوطة."
+  },
+  "sign_out": {
+    "message": "تسجيل الخروج"
+  },
+  "badge_timer": {
+    "message": "مؤقت"
+  },
+  "badge_alarm": {
+    "message": "منبّه"
+  },
+  "daily_suffix": {
+    "message": " · يوميًا"
+  },
+  "profile_signed_in_fallback": {
+    "message": "تم تسجيل الدخول"
+  },
+  "profile_load_error": {
+    "message": "تم تسجيل الدخول، لكن تعذّر تحميل معلومات ملفك الشخصي."
+  },
+  "default_note_title": {
+    "message": "ملاحظة 1"
+  },
+  "sign_in_google": { "message": "تسجيل الدخول باستخدام Google" },
+  "accounts_button": { "message": "حسابات الروابط المحفوظة" },
+  "accounts_title": { "message": "الحسابات المرتبطة" },
+  "add_account_btn": { "message": "+ إضافة رابط" },
+  "account_email_placeholder": { "message": "name@example.com" },
+  "account_title_placeholder": { "message": "العنوان (مثل: العمل)" },
+  "field_title_optional": { "message": "اختياري" },
+  "save_account_btn": { "message": "حفظ الحساب" },
+  "acct_url_required_msg": { "message": "أدخل رابطًا صالحًا." },
+  "no_accounts_yet": { "message": "لا توجد روابط بعد — أضف واحدًا للوصول السريع." },
+  "field_email": { "message": "البريد الإلكتروني" },
+  "field_title": { "message": "العنوان" },
+  "invalid_email_msg": { "message": "أدخل عنوان بريد إلكتروني صالحًا." },
+  "account_links_empty": { "message": "لا توجد روابط محفوظة هنا بعد." },
+  "add_account_link_btn": { "message": "+ إضافة رابط" },
+  "remove_account_btn": { "message": "إزالة الحساب" }
+}

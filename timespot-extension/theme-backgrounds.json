@@ -1,0 +1,159 @@
+{
+  "_readme": "One entry per theme. 'label' is shown in the Customize panel. 'images' is a list of 2560x1440 (2K) image URLs offered as background choices for that theme — add, remove, or replace any URL here and reload the new tab page to see the change. The first image in the list is used by default the first time someone picks that theme. 'custom' now ships with its own starter photos too, on top of whatever a person uploads from their device or pastes as a URL. Leave 'images' as an empty array to make a theme use a flat color background with no photo choices.",
+  "light": {
+    "label": "Minimal Light",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "dark": {
+    "label": "Dark Mode",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "retro": {
+    "label": "Retro Terminal",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "ocean": {
+    "label": "Ocean Breeze",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "sunset": {
+    "label": "Sunset",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "forest": {
+    "label": "Forest",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "nord": {
+    "label": "Nord",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "solarized": {
+    "label": "Solarized",
+    "images": [
+     "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "rose": {
+    "label": "Rose",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "lavender": {
+    "label": "Lavender",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "coffee": {
+    "label": "Coffee",
+    "images": [
+     "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "midnight": {
+    "label": "Midnight",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  },
+  "custom": {
+    "label": "Custom",
+    "images": [
+      "https://images.unsplash.com/photo-1505832018823-50331d70d237?q=80&w=1508&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.pexels.com/photos/33561713/pexels-photo-33561713.jpeg",
+      "https://images.pexels.com/photos/38706025/pexels-photo-38706025.jpeg",
+      "https://images.pexels.com/photos/15882108/pexels-photo-15882108.jpeg",
+      "https://images.pexels.com/photos/38136920/pexels-photo-38136920.jpeg",
+      "https://images.pexels.com/photos/20458399/pexels-photo-20458399.jpeg",
+      "https://images.pexels.com/photos/10807697/pexels-photo-10807697.jpeg"
+    ]
+  }
+}

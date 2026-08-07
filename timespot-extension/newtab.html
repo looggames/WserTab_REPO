@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>WserTab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script>
+    // "Fastboot" anti-flash: applies the one visual setting that's cheap
+    // and safe to guess before chrome.storage.local (async) resolves —
+    // whether the card shadow should be off — from a synchronous
+    // localStorage mirror that script.js keeps up to date on every save.
+    // This runs before anything else in <body> is parsed/painted, so if
+    // it applies, the shadow is simply never drawn instead of drawing
+    // then getting removed a moment later. Wrapped in try/catch and kept
+    // tiny on purpose: if anything about it fails, the normal (slightly
+    // slower) path in script.js still applies the correct state.
+    try {
+      var fb = JSON.parse(localStorage.getItem("ts_fastboot") || "null");
+      if (fb && fb.noShadow) document.body.classList.add("fb-no-shadow");
+    } catch (e) {}
+  </script>
+
+  <div class="bg-layer" id="bgLayer"></div>
+  <div class="bg-overlay" id="bgOverlay"></div>
+
+  <!-- Intro / session-lock splash. Hidden by default and only revealed by
+       JS once we actually know whether it should play, so there's never a
+       flash on tabs where it shouldn't show. The cinematic intro text
+       plays once per browser session (first tab after launch). If password
+       protection is on in Settings → Security, this also gates every tab
+       until the right password is entered for the session. -->
+  <div class="welcome-overlay" id="welcomeOverlay" style="display:none;">
+    <div class="welcome-inner">
+      <h1 id="welcomeText" data-i18n="greeting_welcome_back">Welcome back</h1>
+      <p class="welcome-sub" id="welcomeSub" data-i18n="welcome_loading">Loading your day…</p>
+      <div class="welcome-dots" id="welcomeDots"><span></span><span></span><span></span></div>
+
+      <div class="welcome-lock" id="welcomeLock" style="display:none;">
+        <div class="welcome-lock-clock" id="welcomeLockClock">--:--</div>
+        <div class="welcome-lock-date" id="welcomeLockDate"></div>
+
+        <div class="lock-card" id="lockCard">
+          <div class="welcome-lock-avatar">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4.5" y="10.5" width="15" height="10" rx="2.4"/>
+              <path d="M8 10.5V7.5a4 4 0 0 1 8 0v3"/>
+              <circle cx="12" cy="15" r="1.4" fill="currentColor" stroke="none"/>
+              <path d="M12 16.4V17.6" stroke-width="2"/>
+            </svg>
+          </div>
+          <p class="welcome-lock-label" id="welcomeLockLabel" data-i18n="lock_enter_password">Enter password to continue</p>
+          <form class="welcome-lock-form" id="welcomeLockForm">
+            <div class="welcome-lock-input-wrap">
+              <input type="password" id="welcomeLockInput" placeholder="Password" data-i18n-placeholder="lock_password_placeholder" autocomplete="current-password" autofocus />
+              <button type="button" class="welcome-lock-eye" id="welcomeLockEye" title="Show password" aria-label="Show password" data-i18n-title="lock_show_password" data-i18n-aria-label="lock_show_password">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+            <button type="submit" class="welcome-lock-submit" title="Unlock" aria-label="Unlock" data-i18n-title="lock_unlock" data-i18n-aria-label="lock_unlock">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </button>
+          </form>
+          <p class="welcome-lock-error" id="welcomeLockError" style="display:none;" data-i18n="lock_incorrect_password">Incorrect password. Try again.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page" id="pageRoot">
+    <div class="card" id="cardRoot">
+
+      <!-- Top bar -->
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-name">WserTab</span>
+        </div>
+
+        <div class="search-wrap" id="searchWrap">
+          <form class="search" id="searchForm" autocomplete="off">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="M21 21l-4.3-4.3"/>
+            </svg>
+            <input id="citySearch" type="text" placeholder="Search Google or type a URL…" data-i18n-placeholder="search_placeholder" autocomplete="off" />
+            <button type="button" class="search-icon-btn" id="voiceSearchButton" title="Search by voice" aria-label="Search by voice" data-i18n-title="voice_search" data-i18n-aria-label="voice_search">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="2" width="6" height="12" rx="3"/>
+                <path d="M5 10a7 7 0 0 0 14 0"/>
+                <path d="M12 19v3"/>
+              </svg>
+            </button>
+            <button type="button" class="search-icon-btn" id="lensSearchButton" title="Search by image" aria-label="Search by image" data-i18n-title="lens_search" data-i18n-aria-label="lens_search">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 8V6a2 2 0 0 1 2-2h2"/>
+                <path d="M4 16v2a2 2 0 0 0 2 2h2"/>
+                <path d="M20 8V6a2 2 0 0 0-2-2h-2"/>
+                <path d="M20 16v2a2 2 0 0 1-2 2h-2"/>
+                <circle cx="12" cy="12" r="3.2"/>
+              </svg>
+            </button>
+          </form>
+          <div class="search-suggest" id="searchSuggest"></div>
+        </div>
+
+        <nav class="nav-actions">
+          <button class="icon-btn" id="notesBtn" title="Notes & Tasks" data-i18n-title="nav_notes_tasks">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </button>
+
+          <button class="icon-btn" id="alertsBtn" title="Timer & Alerts" data-i18n-title="nav_timer_alerts">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </button>
+
+          <button class="icon-btn" id="settingsBtn" title="Customize" data-i18n-title="nav_customize">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 0 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 0 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 0 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 0 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/>
+            </svg>
+          </button>
+
+          <button class="icon-btn" id="layoutEditBtn" title="Rearrange sections" data-i18n-title="nav_rearrange">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+            </svg>
+          </button>
+
+          <div class="auth-area" id="authArea">
+            <button class="icon-btn google-icon-btn" id="signInBtn" title="Your saved link accounts" aria-label="Your saved link accounts" data-i18n-title="accounts_button" data-i18n-aria-label="accounts_button">
+              <svg viewBox="0 0 48 48" width="18" height="18">
+                <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.9-2.26 5.36-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                <path fill="#FBBC05" d="M10.53 28.59A14.5 14.5 0 0 1 9.5 24c0-1.59.27-3.13.76-4.59l-7.98-6.19A23.94 23.94 0 0 0 0 24c0 3.86.92 7.51 2.56 10.78l7.97-6.19z"/>
+                <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.97 6.19C6.51 42.62 14.62 48 24 48z"/>
+              </svg>
+            </button>
+            <div class="auth-dropdown accounts-dropdown" id="authDropdown"></div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- Content -->
+      <div class="layout-grid" id="layoutGrid">
+
+        <section class="dash-section hero" data-section="hero" draggable="false">
+          <span class="drag-handle" title="Drag to reorder" data-i18n-title="drag_reorder">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><circle cx="8" cy="5" r="1.6"/><circle cx="16" cy="5" r="1.6"/><circle cx="8" cy="12" r="1.6"/><circle cx="16" cy="12" r="1.6"/><circle cx="8" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/></svg>
+          </span>
+          <div class="clock" id="mainClock">00:00:00</div>
+
+          <div class="hero-meta">
+            <span class="meta-label" data-i18n="current_label">Current</span>
+
+            <div class="hero-center">
+              <div id="sunLine" class="sun-line">Sun ☀️ : 07:12 – 17:17 (10h 06m)</div>
+              <div id="dateLine" class="date-line">Monday, Mar 24 2025</div>
+            </div>
+
+            <div class="toggle" id="formatToggle">
+              <button class="toggle-btn active" data-format="12">12h</button>
+              <button class="toggle-btn" data-format="24">24h</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Favorite links (before Cities) -->
+        <section class="dash-section favorites" data-section="favorites" draggable="false">
+          <span class="drag-handle" title="Drag to reorder" data-i18n-title="drag_reorder">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><circle cx="8" cy="5" r="1.6"/><circle cx="16" cy="5" r="1.6"/><circle cx="8" cy="12" r="1.6"/><circle cx="16" cy="12" r="1.6"/><circle cx="8" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/></svg>
+          </span>
+          <div class="cities-head">
+            <h1 class="fav-title" data-i18n="favorites_title">Favorite Links</h1>
+           <!--<p class="tagline" data-i18n="favorites_tagline">Your shortcuts, one click away.</p>--> 
+            <button class="add-city-btn" id="addLinkBtn">
+              <span data-i18n="add_link_btn">Add Link</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="link-grid" id="linkGrid"></div>
+        </section>
+
+        <!-- Cities -->
+        <section class="dash-section cities" data-section="cities" draggable="false">
+          <span class="drag-handle" title="Drag to reorder" data-i18n-title="drag_reorder">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><circle cx="8" cy="5" r="1.6"/><circle cx="16" cy="5" r="1.6"/><circle cx="8" cy="12" r="1.6"/><circle cx="16" cy="12" r="1.6"/><circle cx="8" cy="19" r="1.6"/><circle cx="16" cy="19" r="1.6"/></svg>
+          </span>
+          <div class="cities-head">
+            <h1 id="mainCityName">London,<br/>United Kingdom</h1>
+           <!-- <p class="tagline" data-i18n-html="cities_tagline">Life moves fast. Stay on time<br/>and enjoy every moment!</p>-->
+            <button class="add-city-btn" id="addCityBtn">
+              <span data-i18n="add_another_city">Add Another City</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 8v8M8 12h8"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="city-grid" id="cityGrid"></div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ Floating system windows ============ -->
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="sys-tabs sidebar-tabs">
+        <button class="sys-tab active" data-systab="tasks" data-i18n="tab_tasks">Tasks</button>
+        <button class="sys-tab" data-systab="notes" data-i18n="tab_notes">Notes</button>
+        <button class="sys-tab" data-systab="alerts" data-i18n="tab_alerts">Alerts</button>
+      </div>
+      <button class="icon-btn small" id="sidebarClose" title="Close" data-i18n-title="close_btn">&times;</button>
+    </div>
+
+    <div class="sidebar-body">
+      <div class="sys-panel" data-syspanel="tasks">
+        <form class="sys-add-row" id="taskAddForm">
+          <input id="taskInput" type="text" placeholder="Add a task…" data-i18n-placeholder="task_input_placeholder" autocomplete="off" />
+          <button type="submit" class="icon-btn small">+</button>
+        </form>
+
+        <div class="task-tag-filter" id="taskTagFilter"></div>
+
+        <div class="task-list" id="taskList"></div>
+
+        <div class="tag-manager" id="tagManager">
+          <button type="button" class="tag-manager-toggle" id="tagManagerToggle">
+            <span data-i18n="manage_status_tags">Manage status tags</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="tag-manager-body" id="tagManagerBody" style="display:none;">
+            <div class="tag-edit-list" id="tagEditList"></div>
+            <form class="tag-add-row" id="tagAddForm">
+              <input type="color" id="newTagColor" value="#2f6fed" title="Tag color" />
+              <input type="text" id="newTagName" placeholder="New tag name…" data-i18n-placeholder="new_tag_placeholder" autocomplete="off" />
+              <button type="submit" class="icon-btn small">+</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="sys-panel" data-syspanel="notes" style="display:none;">
+        <div class="notes-toolbar">
+          <button type="button" class="pill-btn small-pill" id="addNoteBtn" data-i18n="new_note_btn">+ New note</button>
+        </div>
+        <div class="notes-list" id="notesListEl"></div>
+      </div>
+
+      <div class="sys-panel" data-syspanel="alerts" style="display:none;">
+        <div class="alert-mode-tabs" id="alertModeTabs">
+          <button type="button" class="alert-mode-tab active" data-mode="clock" data-i18n="mode_at_time">At a time</button>
+          <button type="button" class="alert-mode-tab" data-mode="countdown" data-i18n="mode_countdown">Countdown</button>
+        </div>
+
+        <form class="alert-add-row" id="alertClockForm" data-mode-panel="clock">
+          <input id="alertTimeInput" type="time" required />
+          <input id="alertLabelInput" type="text" placeholder="Label (e.g. Stand up)" data-i18n-placeholder="alert_label_placeholder" autocomplete="off" />
+          <label class="repeat-check"><input type="checkbox" id="alertRepeatInput" /> <span data-i18n="repeat_daily">Repeat daily</span></label>
+          <button type="submit" class="pill-btn full-width" data-i18n="set_alert_btn">Set alert</button>
+        </form>
+
+        <form class="alert-add-row" id="alertCountdownForm" data-mode-panel="countdown" style="display:none;">
+          <div class="countdown-presets" id="countdownPresets">
+            <button type="button" class="preset-pill" data-min="15" data-i18n="preset_15min">15 min</button>
+            <button type="button" class="preset-pill" data-min="25" data-i18n="preset_25min">25 min</button>
+            <button type="button" class="preset-pill" data-min="45" data-i18n="preset_45min">45 min</button>
+            <button type="button" class="preset-pill" data-min="60" data-i18n="preset_1hour">1 hour</button>
+          </div>
+          <div class="custom-countdown-row">
+            <input id="countdownCustomInput" type="number" min="1" max="600" placeholder="Custom minutes" data-i18n-placeholder="custom_minutes_placeholder" />
+          </div>
+          <input id="countdownLabelInput" type="text" placeholder="Label (e.g. Pasta timer)" data-i18n-placeholder="countdown_label_placeholder" autocomplete="off" />
+          <button type="submit" class="pill-btn full-width" data-i18n="start_countdown_btn">Start countdown</button>
+        </form>
+
+        <div class="alert-list" id="alertList"></div>
+        <p class="settings-hint" style="margin-top:10px;" data-i18n="alerts_hint">Alerts use Chrome notifications and fire even if this tab is closed.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============ Modals ============ -->
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <h2 data-i18n="add_city_title">Add a city</h2>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <input id="modalSearch" type="text" placeholder="Type a city name (e.g. Tokyo)" data-i18n-placeholder="modal_search_placeholder" autocomplete="off" />
+      <div class="modal-list" id="modalList"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="linkModalOverlay">
+    <div class="modal">
+      <div class="modal-head">
+        <h2 data-i18n="add_link_title">Add a favorite link</h2>
+        <button class="modal-close" id="linkModalClose">&times;</button>
+      </div>
+      <label class="field-label" data-i18n="field_name">Name</label>
+      <input id="linkNameInput" type="text" placeholder="e.g. Gmail" data-i18n-placeholder="link_name_placeholder" autocomplete="off" />
+      <label class="field-label" data-i18n="field_url">URL</label>
+      <input id="linkUrlInput" type="text" placeholder="e.g. https://mail.google.com" data-i18n-placeholder="link_url_placeholder" autocomplete="off" />
+      <button class="pill-btn full-width" id="linkSaveBtn" data-i18n="save_link_btn">Save link</button>
+
+      <label class="field-label" style="margin-top:14px;" data-i18n="pick_popular_site">Or pick a popular site</label>
+      <input id="linkSuggestFilter" type="text" placeholder="Filter suggestions…" data-i18n-placeholder="filter_suggestions_placeholder" autocomplete="off" />
+      <div class="suggest-link-grid" id="suggestLinkGrid"></div>
+    </div>
+  </div>
+
+  <!-- Settings modal: Background + Theme + Display -->
+  <div class="modal-overlay" id="settingsOverlay">
+    <div class="modal settings-modal">
+      <div class="modal-head">
+        <h2 data-i18n="customize_title">Customize</h2>
+        <button class="modal-close" id="settingsClose">&times;</button>
+      </div>
+
+      <div class="settings-section-tabs" id="settingsSectionTabs">
+        <button class="section-tab active" data-sec="theme" data-i18n="tab_theme">Theme</button>
+        <button class="section-tab" data-sec="display" data-i18n="tab_display">Display</button>
+        <button class="section-tab" data-sec="security" data-i18n="tab_security">Security</button>
+        <button class="section-tab" data-sec="updates" data-i18n="tab_updates">Updates</button>
+      </div>
+
+      <div class="settings-modal-body">
+      <!-- Theme (each preset now pairs a palette with a background photo) -->
+      <div class="settings-section" data-section-panel="theme">
+
+        <p class="settings-hint" style="margin-top:0;" data-i18n="theme_hint">Pick a look — every preset pairs a color palette with a matching background photo. Defaults to your system light/dark preference; build your own with Custom.</p>
+        <div class="theme-picker" id="themePicker">
+          <button class="theme-option" data-theme="light">
+            <span class="theme-swatch swatch-light"></span>
+            <span class="layout-name" data-i18n="theme_light">Minimal Light</span>
+          </button>
+          <button class="theme-option" data-theme="dark">
+            <span class="theme-swatch swatch-dark"></span>
+            <span class="layout-name" data-i18n="theme_dark">Dark Mode</span>
+          </button>
+          <button class="theme-option" data-theme="retro">
+            <span class="theme-swatch swatch-retro"></span>
+            <span class="layout-name" data-i18n="theme_retro">Retro Terminal</span>
+          </button>
+          <button class="theme-option" data-theme="ocean">
+            <span class="theme-swatch swatch-ocean"></span>
+            <span class="layout-name" data-i18n="theme_ocean">Ocean Breeze</span>
+          </button>
+          <button class="theme-option" data-theme="sunset">
+            <span class="theme-swatch swatch-sunset"></span>
+            <span class="layout-name" data-i18n="theme_sunset">Sunset</span>
+          </button>
+          <button class="theme-option" data-theme="forest">
+            <span class="theme-swatch swatch-forest"></span>
+            <span class="layout-name" data-i18n="theme_forest">Forest</span>
+          </button>
+          <button class="theme-option" data-theme="nord">
+            <span class="theme-swatch swatch-nord"></span>
+            <span class="layout-name" data-i18n="theme_nord">Nord</span>
+          </button>
+          <button class="theme-option" data-theme="solarized">
+            <span class="theme-swatch swatch-solarized"></span>
+            <span class="layout-name" data-i18n="theme_solarized">Solarized</span>
+          </button>
+          <button class="theme-option" data-theme="rose">
+            <span class="theme-swatch swatch-rose"></span>
+            <span class="layout-name" data-i18n="theme_rose">Rose</span>
+          </button>
+          <button class="theme-option" data-theme="lavender">
+            <span class="theme-swatch swatch-lavender"></span>
+            <span class="layout-name" data-i18n="theme_lavender">Lavender</span>
+          </button>
+          <button class="theme-option" data-theme="coffee">
+            <span class="theme-swatch swatch-coffee"></span>
+            <span class="layout-name" data-i18n="theme_coffee">Coffee</span>
+          </button>
+          <button class="theme-option" data-theme="midnight">
+            <span class="theme-swatch swatch-midnight"></span>
+            <span class="layout-name" data-i18n="theme_midnight">Midnight</span>
+          </button>
+          <button class="theme-option" data-theme="custom">
+            <span class="theme-swatch swatch-custom" id="customSwatchPreview"></span>
+            <span class="layout-name" data-i18n="theme_custom">Custom</span>
+          </button>
+        </div>
+
+        <div class="theme-bg-panel" id="themeBgPanel">
+          <div class="theme-bg-head">
+            <span class="theme-bg-title"><span data-i18n="bg_photo_for">Background photo for</span> <b id="themeBgLabel" data-i18n="bg_photo_this_theme">this theme</b></span>
+            <label class="switch-row theme-bg-switch">
+              <span class="switch">
+                <input type="checkbox" id="themeBgToggle" checked />
+                <span class="switch-track"><span class="switch-thumb"></span></span>
+              </span>
+            </label>
+          </div>
+          <div class="theme-bg-controls" id="themeBgControls">
+            <p class="settings-hint" style="margin:0 0 10px;" data-i18n="bg_upload_hint">Pick one of the built-in 2K photos, upload your own from your device, shuffle in a new one from the internet, or paste an image link. Hover a photo you added yourself to remove it.</p>
+            <div class="theme-bg-thumbs" id="themeBgThumbs"></div>
+            <div class="theme-bg-actions">
+              <button type="button" class="ghost-mini-btn" id="themeBgUploadBtn" data-i18n="upload_from_device">📁 Upload from device</button>
+              <button type="button" class="ghost-mini-btn" id="themeBgShuffle" data-i18n="shuffle_from_internet">🔀 Shuffle from the internet</button>
+              <input type="file" id="themeBgUploadInput" accept="image/*" multiple hidden />
+            </div>
+            <p class="theme-bg-upload-progress" id="themeBgUploadProgress" style="display:none;"></p>
+            <div class="theme-bg-url-row">
+              <input id="themeBgUrlInput" type="text" placeholder="Or paste an image URL…" data-i18n-placeholder="paste_image_url_placeholder" autocomplete="off" />
+              <button type="button" class="ghost-mini-btn" id="themeBgUrlApply" data-i18n="use_btn">Use</button>
+            </div>
+
+            <div class="theme-bg-slideshow">
+              <span class="theme-bg-slideshow-label">
+                <span class="title" data-i18n="bg_slideshow_title">Slideshow</span>
+                <span class="hint" data-i18n="bg_slideshow_hint">Automatically rotate through this theme's photos</span>
+              </span>
+              <span class="theme-bg-slideshow-interval" id="bgSlideshowIntervalWrap">
+                <select id="bgSlideshowInterval" title="Change every…">
+                  <option value="1">1 min</option>
+                  <option value="5">5 min</option>
+                  <option value="15">15 min</option>
+                  <option value="30">30 min</option>
+                  <option value="60">1 hour</option>
+                </select>
+                <label class="switch">
+                  <input type="checkbox" id="bgSlideshowToggle" />
+                  <span class="switch-track"><span class="switch-thumb"></span></span>
+                </label>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="custom-theme-editor" id="customThemeEditor" style="display:none;">
+          <p class="custom-theme-group-label" data-i18n="group_card_text">Card &amp; text</p>
+          <div class="custom-theme-row">
+            <label for="customCardColor" data-i18n="label_card_color">Card / surface color</label>
+            <input type="color" id="customCardColor" value="#ECECE9" />
+          </div>
+          <div class="custom-theme-row">
+            <label for="customInkColor" data-i18n="label_text_color">Text color</label>
+            <input type="color" id="customInkColor" value="#111111" />
+          </div>
+          <div class="custom-theme-row">
+            <label for="customMutedColor" data-i18n="label_muted_color">Muted / secondary text</label>
+            <input type="color" id="customMutedColor" value="#8a8a86" />
+          </div>
+          <div class="custom-theme-row">
+            <label for="customInkContrastColor" data-i18n="label_button_text_color">Button text color</label>
+            <input type="color" id="customInkContrastColor" value="#ffffff" />
+          </div>
+
+          <p class="custom-theme-group-label" data-i18n="group_city_tile">Highlighted city tile</p>
+          <div class="custom-theme-row">
+            <label for="customCityHighlightBg" data-i18n="label_bg">Background</label>
+            <input type="color" id="customCityHighlightBg" value="#151515" />
+          </div>
+          <div class="custom-theme-row">
+            <label for="customCityHighlightInk" data-i18n="label_text_color">Text color</label>
+            <input type="color" id="customCityHighlightInk" value="#ffffff" />
+          </div>
+
+          <p class="custom-theme-group-label" data-i18n="group_page_bg">Page background</p>
+          <div class="custom-theme-row">
+            <label for="customPageBgColor" data-i18n="label_bg_color">Background color</label>
+            <div class="custom-theme-color-opacity">
+              <input type="color" id="customPageBgColor" value="#eceae4" />
+              <input type="range" id="customPageBgOpacity" min="0" max="100" value="100" title="Background color opacity" />
+              <span class="custom-theme-opacity-value" id="customPageBgOpacityValue">100%</span>
+            </div>
+          </div>
+          <p class="custom-theme-group-label" data-i18n="group_accent">Accent colors</p>
+          <div class="custom-theme-row">
+            <label for="customAccentColor" data-i18n="label_accent1">Accent (Notes, icons, highlights)</label>
+            <input type="color" id="customAccentColor" value="#4f7cff" />
+          </div>
+          <div class="custom-theme-row">
+            <label for="customAccent2Color" data-i18n="label_accent2">Accent 2 (Alerts, gradients)</label>
+            <input type="color" id="customAccent2Color" value="#ff9a4f" />
+          </div>
+          <p class="settings-hint" style="margin: 10px 0 0;" data-i18n-html="custom_theme_footer_hint">Use the <b>Background photo</b> section above to pick an image — it applies no matter which palette you pick here.</p>
+        </div>
+      </div>
+
+      <!-- Display -->
+      <div class="settings-section" data-section-panel="display" style="display:none;">
+        <p class="settings-hint" data-i18n="display_bleed_hint">The card always stays centered with its normal spacing. Turn this on to stretch your background edge-to-edge across the whole window and make the card blend into it — no card color, just your content floating over the background.</p>
+        <label class="switch-row">
+          <span data-i18n="display_full_bleed">Full-width, full-height background</span>
+          <span class="switch">
+            <input type="checkbox" id="fullBleedToggle" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+
+        <p class="settings-hint" style="margin-top:18px;" data-i18n="display_shadow_hint">Turn the card's drop shadow on or off. This is independent of the full-bleed setting above.</p>
+        <label class="switch-row">
+          <span data-i18n="display_card_shadow">Card shadow</span>
+          <span class="switch">
+            <input type="checkbox" id="cardShadowToggle" checked />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+
+        <p class="settings-hint" style="margin-top:18px;" data-i18n="display_overlay_hint">A subtle dark wash over your background photo, so text stays readable on busy images. Turn it off for the photo's true colors, or dial its strength up or down.</p>
+        <label class="switch-row">
+          <span data-i18n="display_overlay">Overlay background</span>
+          <span class="switch">
+            <input type="checkbox" id="overlayToggle" checked />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+        <div class="display-slider-row">
+          <input type="range" id="overlayOpacityRange" min="0" max="80" value="22" title="Overlay strength" />
+          <span class="display-slider-value" id="overlayOpacityValue">22%</span>
+        </div>
+      </div>
+
+      <!-- Security -->
+      <div class="settings-section" data-section-panel="security" style="display:none;">
+        <p class="settings-hint" data-i18n="security_hint">Ask for a password the first time your browser opens each session, on this device. This is a light privacy screen for shared computers — not real security. Anyone with access to this browser's extension storage can bypass it, and a forgotten password can only be cleared by resetting the extension's data.</p>
+        <label class="switch-row">
+          <span data-i18n="security_require_password">Require password each session</span>
+          <span class="switch">
+            <input type="checkbox" id="passwordToggle" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </span>
+        </label>
+
+        <div class="password-setup" id="passwordSetup" style="display:none;">
+          <div class="password-setup-row">
+            <input type="password" id="newPasswordInput" placeholder="New password" data-i18n-placeholder="new_password_placeholder" autocomplete="new-password" />
+          </div>
+          <div class="password-setup-row">
+            <input type="password" id="confirmPasswordInput" placeholder="Confirm password" data-i18n-placeholder="confirm_password_placeholder" autocomplete="new-password" />
+          </div>
+          <button type="button" class="pill-btn full-width" id="savePasswordBtn" data-i18n="save_password_btn">Save password</button>
+          <p class="password-setup-msg" id="passwordSetupMsg" style="display:none;"></p>
+        </div>
+
+        <div class="password-manage" id="passwordManage" style="display:none;">
+          <button type="button" class="ghost-mini-btn" id="changePasswordBtn" data-i18n="change_password_btn">Change password</button>
+          <button type="button" class="ghost-mini-btn" id="removePasswordBtn" data-i18n="remove_password_btn">Remove password</button>
+        </div>
+      </div>
+
+      <!-- Updates — self-hosted, no Chrome Web Store involved. Checks a
+           small version.json file (see UPDATE_MANIFEST_URL in script.js)
+           and, if it's newer than this install, links to wherever the
+           new .zip is posted. Chrome extensions can't rewrite their own
+           files from inside a page, so this can only ever point you to
+           the download — actually installing it is still: unzip over
+           the old folder, then hit "Update" (or reload) in
+           chrome://extensions. -->
+      <div class="settings-section" data-section-panel="updates" style="display:none;">
+        <p class="settings-hint" data-i18n="updates_hint">Checks a small file the developer publishes for free (no Chrome Web Store, no cost) to see if a newer version is out. It can only point you to the download — it can't install it for you.</p>
+        <div class="update-current-row">
+          <span data-i18n="updates_current_version">Current version</span>
+          <span class="update-version-badge" id="updateCurrentVersion">—</span>
+        </div>
+        <button type="button" class="pill-btn full-width" id="checkUpdateBtn" data-i18n="updates_check_btn" style="margin-top:12px;">Check for updates</button>
+        <div class="update-result" id="updateResult" style="display:none;"></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fired-alert popup: shown live in-tab (with sound) whenever a timer/alert hits zero -->
+  <div class="alert-fired-overlay" id="alertFiredOverlay">
+    <div class="alert-fired-box">
+      <div class="alert-fired-icon">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+          <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+        </svg>
+      </div>
+      <h3 id="firedAlertTitle" data-i18n="fired_alert_default_title">Alert</h3>
+      <p id="firedAlertMsg" data-i18n="fired_alert_default_msg">Time's up!</p>
+      <div class="alert-fired-actions">
+        <button type="button" class="ghost-btn" id="firedAlertSnooze" data-i18n="snooze_5min">Snooze 5 min</button>
+        <button type="button" class="pill-btn" id="firedAlertDismiss" data-i18n="dismiss_btn">Dismiss</button>
+      </div>
+      <p class="alert-fired-queue-note" id="firedAlertQueueNote" style="display:none;"></p>
+    </div>
+  </div>
+
+  <script src="i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

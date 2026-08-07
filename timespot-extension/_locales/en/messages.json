@@ -1,0 +1,525 @@
+{
+  "ext_name": {
+    "message": "TimeSpot — World Clock New Tab"
+  },
+  "ext_description": {
+    "message": "A new tab page with a world clock, Google search, image-backed themes, favorite links, notes & tasks, and timing alerts."
+  },
+  "welcome_loading": {
+    "message": "Loading your day…"
+  },
+  "lock_enter_password": {
+    "message": "Enter password to continue"
+  },
+  "lock_incorrect_password": {
+    "message": "Incorrect password. Try again."
+  },
+  "lock_password_placeholder": {
+    "message": "Password"
+  },
+  "lock_show_password": {
+    "message": "Show password"
+  },
+  "lock_hide_password": {
+    "message": "Hide password"
+  },
+  "lock_unlock": {
+    "message": "Unlock"
+  },
+  "search_placeholder": {
+    "message": "Search Google or type a URL…"
+  },
+  "nav_notes_tasks": {
+    "message": "Notes & Tasks"
+  },
+  "nav_timer_alerts": {
+    "message": "Timer & Alerts"
+  },
+  "nav_customize": {
+    "message": "Customize"
+  },
+  "nav_rearrange": {
+    "message": "Rearrange sections"
+  },
+  "sign_in_google": {
+    "message": "Sign in with Google"
+  },
+  "drag_reorder": {
+    "message": "Drag to reorder"
+  },
+  "current_label": {
+    "message": "Current"
+  },
+  "favorites_title": {
+    "message": "Favorite Links"
+  },
+  "favorites_tagline": {
+    "message": "Your shortcuts, one click away."
+  },
+  "add_link_btn": {
+    "message": "Add Link"
+  },
+  "cities_tagline": {
+    "message": "Life moves fast. Stay on time\nand enjoy every moment!"
+  },
+  "add_another_city": {
+    "message": "Add Another City"
+  },
+  "tab_tasks": {
+    "message": "Tasks"
+  },
+  "tab_notes": {
+    "message": "Notes"
+  },
+  "tab_alerts": {
+    "message": "Alerts"
+  },
+  "close_btn": {
+    "message": "Close"
+  },
+  "task_input_placeholder": {
+    "message": "Add a task…"
+  },
+  "manage_status_tags": {
+    "message": "Manage status tags"
+  },
+  "new_tag_placeholder": {
+    "message": "New tag name…"
+  },
+  "new_note_btn": {
+    "message": "+ New note"
+  },
+  "mode_at_time": {
+    "message": "At a time"
+  },
+  "mode_countdown": {
+    "message": "Countdown"
+  },
+  "alert_label_placeholder": {
+    "message": "Label (e.g. Stand up)"
+  },
+  "repeat_daily": {
+    "message": "Repeat daily"
+  },
+  "set_alert_btn": {
+    "message": "Set alert"
+  },
+  "preset_15min": {
+    "message": "15 min"
+  },
+  "preset_25min": {
+    "message": "25 min"
+  },
+  "preset_45min": {
+    "message": "45 min"
+  },
+  "preset_1hour": {
+    "message": "1 hour"
+  },
+  "custom_minutes_placeholder": {
+    "message": "Custom minutes"
+  },
+  "countdown_label_placeholder": {
+    "message": "Label (e.g. Pasta timer)"
+  },
+  "start_countdown_btn": {
+    "message": "Start countdown"
+  },
+  "alerts_hint": {
+    "message": "Alerts use Chrome notifications and fire even if this tab is closed."
+  },
+  "add_city_title": {
+    "message": "Add a city"
+  },
+  "modal_search_placeholder": {
+    "message": "Type a city name (e.g. Tokyo)"
+  },
+  "add_link_title": {
+    "message": "Add a favorite link"
+  },
+  "field_name": {
+    "message": "Name"
+  },
+  "field_url": {
+    "message": "URL"
+  },
+  "link_name_placeholder": {
+    "message": "e.g. Gmail"
+  },
+  "link_url_placeholder": {
+    "message": "e.g. https://mail.google.com"
+  },
+  "save_link_btn": {
+    "message": "Save link"
+  },
+  "pick_popular_site": {
+    "message": "Or pick a popular site"
+  },
+  "filter_suggestions_placeholder": {
+    "message": "Filter suggestions…"
+  },
+  "customize_title": {
+    "message": "Customize"
+  },
+  "tab_theme": {
+    "message": "Theme"
+  },
+  "tab_display": {
+    "message": "Display"
+  },
+  "tab_security": {
+    "message": "Security"
+  },
+  "theme_hint": {
+    "message": "Pick a look — every preset pairs a color palette with a matching background photo. Defaults to your system light/dark preference; build your own with Custom."
+  },
+  "theme_light": {
+    "message": "Minimal Light"
+  },
+  "theme_dark": {
+    "message": "Dark Mode"
+  },
+  "theme_retro": {
+    "message": "Retro Terminal"
+  },
+  "theme_ocean": {
+    "message": "Ocean Breeze"
+  },
+  "theme_sunset": {
+    "message": "Sunset"
+  },
+  "theme_forest": {
+    "message": "Forest"
+  },
+  "theme_nord": {
+    "message": "Nord"
+  },
+  "theme_solarized": {
+    "message": "Solarized"
+  },
+  "theme_rose": {
+    "message": "Rose"
+  },
+  "theme_lavender": {
+    "message": "Lavender"
+  },
+  "theme_coffee": {
+    "message": "Coffee"
+  },
+  "theme_midnight": {
+    "message": "Midnight"
+  },
+  "theme_custom": {
+    "message": "Custom"
+  },
+  "bg_photo_for": {
+    "message": "Background photo for"
+  },
+  "bg_photo_this_theme": {
+    "message": "this theme"
+  },
+  "bg_upload_hint": {
+    "message": "Pick one of the built-in 2K photos, upload your own from your device, shuffle in a new one from the internet, or paste an image link. Hover a photo you added yourself to remove it."
+  },
+  "upload_from_device": {
+    "message": "📁 Upload from device"
+  },
+  "shuffle_from_internet": {
+    "message": "🔀 Shuffle from the internet"
+  },
+  "paste_image_url_placeholder": {
+    "message": "Or paste an image URL…"
+  },
+  "use_btn": {
+    "message": "Use"
+  },
+  "uploading_progress": {
+    "message": "Uploading $1 of $2…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "skipped_images_one": {
+    "message": "Skipped 1 image over 8MB."
+  },
+  "skipped_images_other": {
+    "message": "Skipped $1 images over 8MB.",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "group_card_text": {
+    "message": "Card & text"
+  },
+  "group_city_tile": {
+    "message": "Highlighted city tile"
+  },
+  "group_page_bg": {
+    "message": "Page background"
+  },
+  "group_accent": {
+    "message": "Accent colors"
+  },
+  "label_card_color": {
+    "message": "Card / surface color"
+  },
+  "label_text_color": {
+    "message": "Text color"
+  },
+  "label_muted_color": {
+    "message": "Muted / secondary text"
+  },
+  "label_button_text_color": {
+    "message": "Button text color"
+  },
+  "label_bg": {
+    "message": "Background"
+  },
+  "label_bg_color": {
+    "message": "Background color"
+  },
+  "label_accent1": {
+    "message": "Accent (Notes, icons, highlights)"
+  },
+  "label_accent2": {
+    "message": "Accent 2 (Alerts, gradients)"
+  },
+  "custom_theme_footer_hint": {
+    "message": "Use the <b>Background photo</b> section above to pick an image — it applies no matter which palette you pick here."
+  },
+  "display_bleed_hint": {
+    "message": "The card always stays centered with its normal spacing. Turn this on to stretch your background edge-to-edge across the whole window and make the card blend into it — no card color, just your content floating over the background."
+  },
+  "display_full_bleed": {
+    "message": "Full-width, full-height background"
+  },
+  "display_shadow_hint": {
+    "message": "Turn the card's drop shadow on or off. This is independent of the full-bleed setting above."
+  },
+  "display_card_shadow": {
+    "message": "Card shadow"
+  },
+  "display_overlay_hint": {
+    "message": "A subtle dark wash over your background photo, so text stays readable on busy images. Turn it off for the photo's true colors, or dial its strength up or down."
+  },
+  "display_overlay": {
+    "message": "Overlay background"
+  },
+  "security_hint": {
+    "message": "Ask for a password the first time your browser opens each session, on this device. This is a light privacy screen for shared computers — not real security. Anyone with access to this browser's extension storage can bypass it, and a forgotten password can only be cleared by resetting the extension's data."
+  },
+  "security_require_password": {
+    "message": "Require password each session"
+  },
+  "new_password_placeholder": {
+    "message": "New password"
+  },
+  "confirm_password_placeholder": {
+    "message": "Confirm password"
+  },
+  "save_password_btn": {
+    "message": "Save password"
+  },
+  "change_password_btn": {
+    "message": "Change password"
+  },
+  "remove_password_btn": {
+    "message": "Remove password"
+  },
+  "use_at_least_4_chars": {
+    "message": "Use at least 4 characters."
+  },
+  "passwords_dont_match": {
+    "message": "Passwords don't match."
+  },
+  "confirm_remove_password": {
+    "message": "Remove the password? You'll need to set a new one to re-enable this."
+  },
+  "fired_alert_default_title": {
+    "message": "Alert"
+  },
+  "fired_alert_default_msg": {
+    "message": "Time's up!"
+  },
+  "alert_time_message": {
+    "message": "It's $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "snooze_5min": {
+    "message": "Snooze 5 min"
+  },
+  "dismiss_btn": {
+    "message": "Dismiss"
+  },
+  "fired_more_waiting": {
+    "message": "$1 more waiting…",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "remove_title": {
+    "message": "Remove"
+  },
+  "day_label": {
+    "message": "☀️ Day"
+  },
+  "night_label": {
+    "message": "🌙 Night"
+  },
+  "sun_line": {
+    "message": "Sun $1 : $2 – $3 ($4)",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      },
+      "3": {
+        "content": "$3"
+      },
+      "4": {
+        "content": "$4"
+      }
+    }
+  },
+  "sun_up_all_day": {
+    "message": "Sun ☀️ : up all day"
+  },
+  "sun_down_all_day": {
+    "message": "Sun 🌙 : down all day"
+  },
+  "no_cities_found": {
+    "message": "No cities found"
+  },
+  "added_label": {
+    "message": "Added"
+  },
+  "already_added": {
+    "message": "$1 — already added",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "add_x": {
+    "message": "Add $1",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      }
+    }
+  },
+  "link_empty": {
+    "message": "No favorite links yet — click \"Add Link\" to save your first shortcut."
+  },
+  "greeting_welcome_back": {
+    "message": "Welcome back"
+  },
+  "greeting_good_morning": {
+    "message": "Good morning"
+  },
+  "greeting_good_afternoon": {
+    "message": "Good afternoon"
+  },
+  "greeting_good_evening": {
+    "message": "Good evening"
+  },
+  "filter_all": {
+    "message": "All"
+  },
+  "no_tasks_with_tag": {
+    "message": "No tasks with this tag."
+  },
+  "no_tasks_yet": {
+    "message": "No tasks yet."
+  },
+  "delete_tag_title": {
+    "message": "Delete tag"
+  },
+  "just_now": {
+    "message": "just now"
+  },
+  "default_tag_todo": {
+    "message": "To do"
+  },
+  "default_tag_inprogress": {
+    "message": "In Progress"
+  },
+  "default_tag_inreview": {
+    "message": "In Review"
+  },
+  "default_tag_done": {
+    "message": "Done"
+  },
+  "notes_empty": {
+    "message": "No notes yet — click \"New note\" to add one."
+  },
+  "note_expand": {
+    "message": "Expand"
+  },
+  "note_collapse": {
+    "message": "Collapse"
+  },
+  "note_title_placeholder": {
+    "message": "Note title"
+  },
+  "delete_note_title": {
+    "message": "Delete note"
+  },
+  "no_content": {
+    "message": "No content"
+  },
+  "write_here_placeholder": {
+    "message": "Write here…"
+  },
+  "note_updated": {
+    "message": "Updated $1 $2",
+    "placeholders": {
+      "1": {
+        "content": "$1"
+      },
+      "2": {
+        "content": "$2"
+      }
+    }
+  },
+  "alert_empty": {
+    "message": "No alerts set."
+  },
+  "sign_out": {
+    "message": "Sign out"
+  },
+  "badge_timer": {
+    "message": "Timer"
+  },
+  "badge_alarm": {
+    "message": "Alarm"
+  },
+  "daily_suffix": {
+    "message": " · daily"
+  },
+  "profile_signed_in_fallback": {
+    "message": "Signed in"
+  },
+  "profile_load_error": {
+    "message": "Signed in, but couldn't load your profile info."
+  },
+  "default_note_title": {
+    "message": "Note 1"
+  }
+}
