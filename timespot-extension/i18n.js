@@ -100,6 +100,7 @@ const EN_FALLBACK = {
   updates_download_btn: 'Download',
   updates_check_failed: 'Couldn\'t check for updates right now. Try again later.',
   updates_no_release_yet: 'No release has been published on GitHub yet — this repo has files, but no Release. Publish one to enable update checks.',
+  updates_no_file_yet: "Couldn't find version.json in the repo yet, or it's not valid JSON — double check it was committed to timespot-extension/version.json on the main branch.",
   updates_rate_limited: 'GitHub is temporarily limiting checks from this connection. Wait a bit and try again.',
   updates_network_error: 'Couldn\'t reach GitHub. If you just installed or updated this extension, try reloading it once from chrome://extensions, or check your internet connection.',
   theme_hint: 'Pick a look — every preset pairs a color palette with a matching background photo. Defaults to your system light/dark preference; build your own with Custom.',

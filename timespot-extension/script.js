@@ -113,16 +113,14 @@ const STORAGE_KEY = "timespot_state_v1";
 
 /* ---------------------------------------------------
    Self-hosted update check (no Chrome Web Store, no cost)
-   Uses GitHub's own "latest release" API instead of a separate version
-   file — nothing extra to maintain: whenever a new GitHub Release is
-   published on the repo below, this URL automatically reflects it, tag
-   name and all. api.github.com sends CORS headers that allow this fetch
-   straight from an extension page, and it's free for public repos.
-   To publish an update: bump "version" in manifest.json, zip the
-   extension, then publish a GitHub Release tagged e.g. "v1.7.1" (with
-   that zip attached as the release asset) — that's the whole process.
+   Reads a small version.json file committed straight to the repo (no
+   GitHub "Release" required — just edit and commit this file whenever
+   you publish a new build). raw.githubusercontent.com sends CORS
+   headers that allow this fetch straight from an extension page, and
+   it's free for public repos. Expected shape of that file:
+   { "version": "1.9.0", "notes": "Short changelog line", "downloadUrl": "https://github.com/looggames/WserTab_REPO" }
 --------------------------------------------------- */
-const UPDATE_MANIFEST_URL = "https://api.github.com/repos/looggames/WserTab_REPO/releases/latest";
+const UPDATE_MANIFEST_URL = "https://raw.githubusercontent.com/looggames/WserTab_REPO/main/timespot-extension/version.json";
 const localTZ = Intl.DateTimeFormat().resolvedOptions().timeZone;
 // Follows the browser's UI language (Settings → Languages), used to
 // localize weekday/month names in the main date line.
@@ -1206,25 +1204,19 @@ async function checkForUpdates() {
   result.style.display = "block";
   result.textContent = T("updates_checking");
   try {
-    const res = await fetch(UPDATE_MANIFEST_URL, { cache: "no-store", headers: { Accept: "application/vnd.github+json" } });
-    if (res.status === 404) throw new Error("no-release");
+    const res = await fetch(UPDATE_MANIFEST_URL, { cache: "no-store" });
+    if (res.status === 404) throw new Error("no-file");
     if (res.status === 403) throw new Error("rate-limited");
     if (!res.ok) throw new Error("http-" + res.status);
     const data = await res.json();
-    // GitHub tags are conventionally "v1.7.0" — strip a leading v/V so
-    // the numeric comparison below isn't thrown off by it.
-    const rawTag = data && (data.tag_name || data.name);
-    const latest = rawTag ? String(rawTag).replace(/^v/i, "") : null;
-    if (!latest) throw new Error("no-tag");
+    const latest = (data && data.version) ? String(data.version) : null;
+    if (!latest) throw new Error("no-version-field");
     const current = currentExtensionVersion();
     if (compareVersions(latest, current) > 0) {
       result.classList.add("is-newer");
-      // Release notes (data.body) are markdown from GitHub — shown as
-      // plain text here (escaped) rather than rendered, since this is
-      // just a short heads-up, not a changelog viewer.
-      const notesRaw = (data.body || "").trim();
-      const notes = notesRaw ? `<p class="update-note">${escapeHtml(notesRaw.split("\n")[0].slice(0, 220))}</p>` : "";
-      const url = data.html_url || UPDATE_MANIFEST_URL;
+      const notesRaw = (data.notes || "").trim();
+      const notes = notesRaw ? `<p class="update-note">${escapeHtml(notesRaw)}</p>` : "";
+      const url = data.downloadUrl || "https://github.com/looggames/WserTab_REPO";
       result.innerHTML = `<strong>${T("updates_new_available", [latest])}</strong>${notes}` +
         `<a class="update-download-link" href="${escapeHtml(url)}" target="_blank" rel="noopener">${T("updates_download_btn")}</a>`;
     } else {
@@ -1235,14 +1227,14 @@ async function checkForUpdates() {
     result.classList.add("is-error");
     // Distinguish the common causes instead of one generic message, so
     // this is actually debuggable from the UI instead of only devtools.
-    if (e.message === "no-release") {
-      result.textContent = T("updates_no_release_yet");
+    if (e.message === "no-file") {
+      result.textContent = T("updates_no_file_yet");
     } else if (e.message === "rate-limited") {
       result.textContent = T("updates_rate_limited");
     } else if (e instanceof TypeError) {
       // fetch() itself throws a TypeError for network failures — offline,
       // DNS failure, or (most commonly here) the extension not having
-      // been reloaded yet since api.github.com was added to
+      // been reloaded yet since raw.githubusercontent.com was added to
       // host_permissions in manifest.json.
       result.textContent = T("updates_network_error");
     } else {
