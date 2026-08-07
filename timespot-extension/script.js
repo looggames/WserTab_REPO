@@ -1207,13 +1207,15 @@ async function checkForUpdates() {
   result.textContent = T("updates_checking");
   try {
     const res = await fetch(UPDATE_MANIFEST_URL, { cache: "no-store", headers: { Accept: "application/vnd.github+json" } });
-    if (!res.ok) throw new Error("bad response");
+    if (res.status === 404) throw new Error("no-release");
+    if (res.status === 403) throw new Error("rate-limited");
+    if (!res.ok) throw new Error("http-" + res.status);
     const data = await res.json();
     // GitHub tags are conventionally "v1.7.0" — strip a leading v/V so
     // the numeric comparison below isn't thrown off by it.
     const rawTag = data && (data.tag_name || data.name);
     const latest = rawTag ? String(rawTag).replace(/^v/i, "") : null;
-    if (!latest) throw new Error("no tag_name in response");
+    if (!latest) throw new Error("no-tag");
     const current = currentExtensionVersion();
     if (compareVersions(latest, current) > 0) {
       result.classList.add("is-newer");
@@ -1231,7 +1233,21 @@ async function checkForUpdates() {
     }
   } catch (e) {
     result.classList.add("is-error");
-    result.textContent = T("updates_check_failed");
+    // Distinguish the common causes instead of one generic message, so
+    // this is actually debuggable from the UI instead of only devtools.
+    if (e.message === "no-release") {
+      result.textContent = T("updates_no_release_yet");
+    } else if (e.message === "rate-limited") {
+      result.textContent = T("updates_rate_limited");
+    } else if (e instanceof TypeError) {
+      // fetch() itself throws a TypeError for network failures — offline,
+      // DNS failure, or (most commonly here) the extension not having
+      // been reloaded yet since api.github.com was added to
+      // host_permissions in manifest.json.
+      result.textContent = T("updates_network_error");
+    } else {
+      result.textContent = T("updates_check_failed");
+    }
   } finally {
     if (btn) btn.disabled = false;
   }
