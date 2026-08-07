@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0",
+  "version": "1.8.0",
   "notes": "Fixed the card-shadow flash on load, added a background slideshow, better Arabic (RTL) support, and simpler linked-account links.",
   "downloadUrl": "https://github.com/looggames/WserTab_REPO/releases/latest"
 }
